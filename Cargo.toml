@@ -18,3 +18,9 @@ opt-level = 3
 
 [lib]
 crate-type = ["cdylib"]
+name = "keyboard_optimiser_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "keyboard_optimiser_bin"
+path = "src/main.rs"

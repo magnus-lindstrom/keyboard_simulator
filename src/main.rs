@@ -1,4 +1,4 @@
-use keyboard_optimiser::start;
+use keyboard_optimiser_lib::start;
 
 fn main() {
     start();
