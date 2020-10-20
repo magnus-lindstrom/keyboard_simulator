@@ -1,0 +1,77 @@
+nr_min_loss_target: 10
+keyboard_file: src/qwerty_swe
+letters:
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+  - h
+  - i
+  - j
+  - k
+  - l
+  - m
+  - n
+  - o
+  - p
+  - q
+  - r
+  - s
+  - t
+  - u
+  - v
+  - w
+  - x
+  - y
+  - z
+  - å
+  - ä
+  - ö
+  - ","
+  - .
+  - "'"
+free_letters:
+  - a
+  - b
+  - d
+  - e
+  - f
+  - g
+  - h
+  - i
+  - k
+  - l
+  - m
+  - n
+  - o
+  - p
+  - q
+  - r
+  - s
+  - t
+  - u
+  - y
+unused_keys:
+  - AD12
+  - BKSL
+  - AB10
+locked_letters:
+  j: LSGT
+  z: AB01
+  x: AB02
+  c: AB03
+  v: AB04
+  ",": AB08
+  .: AB09
+  "'": AC11
+  ä: AD09
+  å: AD10
+  ö: AD11
+loss_params:
+  out_roll_punish: 4.0
+  same_fing_punish: 4.0
+  big_y_jump_punish: 2.0
+  hill_shape_punish: 2.0

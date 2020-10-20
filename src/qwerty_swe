@@ -1,0 +1,54 @@
+# This is the European ISO keyboard layout with chosen estimations for key
+# efforts and finger usage.
+#
+#### Column description ####
+#
+# s: Swedish qwerty letter
+# Name: Key name.
+# x,y: Key coordinates. The space between two keys is 1.
+# f: Finger used. (from left to right: -5..5)
+# e: Individual key effort.
+#
+############# Upper Row ##############
+#	Name	x		y	f	e	 s
+	AD01	1.25	1	-5	4	#Q
+	AD02	2.25	1	-4	1.5	#W
+	AD03	3.25	1	-3	1.5	#E
+	AD04	4.25	1	-2	2	#R
+	AD05	5.25	1	-2	3	#T
+	AD06	6.25	1	2	4	#Y
+	AD07	7.25	1	2	3	#U
+	AD08	8.25	1	3	1.5	#I
+	AD09	9.25	1	4	1.5	#O
+	AD10	10.25	1	5	3	#P
+	AD11	11.25	1	5	3	#Å
+	AD12	12.25	1	5	5	#Mod Key
+#
+############ Middle Row #############
+#	Name	x		y	f	e	 s
+	AC01	1.50	2	-5	2	#A
+	AC02	2.50	2	-4	1	#S
+	AC03	3.50	2	-3	1	#D
+	AC04	4.50	2	-2	1	#F
+	AC05	5.50	2	-2	2	#G
+	AC06	6.50	2	2	2	#H
+	AC07	7.50	2	2	1	#J
+	AC08	8.50	2	3	1	#K
+	AC09	9.50	2	4	1	#L
+	AC10	10.50	2	5	2	#Ö
+	AC11	11.50	2	5	2	#Ä
+	BKSL	12.50	2	5	5	#'
+#
+############ Bottom Row #############
+#	Name	x		y	f	e	 s	
+	LSGT	1.00	3	-5	5	#<
+	AB01	2.00	3	-5	4	#z
+	AB02	3.00	3	-4	4	#x
+	AB03	4.00	3	-3	3	#c
+	AB04	5.00	3	-2	2	#v
+	AB05	6.00	3	-2	4	#b
+	AB06	7.00	3	2	2	#n
+	AB07	8.00	3	2	2	#m
+	AB08	9.00	3	3	2	#,
+	AB09	10.00	3	4	2	#.
+	AB10	11.00	3	5	3	#-

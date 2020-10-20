@@ -1,0 +1,122 @@
+# This file contains the settings under which the keyboard should be
+# optimised. Do not write anything in the file without leading with a
+# '#', except where it's called for.
+#
+# This file lists:
+# 1: The keyboard layout file to use.
+# 2: The letters to place in the optimisation.
+# 3: The keys to not consider during optimisation.
+# 4: Characters that shall be locked in place.
+#
+#
+########################## 0: Nr minimum losses ##########################
+#
+# The optimisation stops when the best layout found has been found X
+# number of times. Decide how many times that should be, below. 
+#
+@@@@@@@@@@@@@@
+10
+@@@@@@@@@@@@@@
+#
+#
+########################### 1: Keyboard Layout ###########################
+#
+# Choose keyboard layout by typing a file name below that has been
+# configured to your liking. It has to be in src/.
+#
+@@@@@@@@@@@@@@
+src/qwerty_swe
+@@@@@@@@@@@@@@
+#
+#
+########################## 2: Letters to place ###########################
+#
+# Specify which letters shall be used during the optimisation. Depending
+# on your corpus of text, some characters will be converted to spaces,
+# if they are not found in the below list.
+#
+# 16 letters with one space in between fit between the below rows of @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+a b c d e f g h i j k l m n o p
+q r s t u v w x y z å ä ö , . '
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#
+#
+###########################   3: Unused Keys   ###########################
+#
+# It is assumed that all primary keys in the three rows B, C and D will
+# be used for your chosen keyboard layout. Depending on how many letters
+# are to be placed, count them above, some keys will be unused. Choose
+# below which keys those are.
+# Swedish QWERTY has 35 keys. These are, from top to bottom, left to right
+#
+# AD01-AD12 (Q to ¨)
+# AC01, ..., AC11, BKSL (A to ')
+# LSGT, AB01, ..., AB10 (< to -)
+#
+#
+@@@@
+AD12
+BKSL
+AB10
+@@@@
+#
+#
+########################## 4: Locked characters ##########################
+#
+# Choose which characters to lock in place and which keys to lock them
+# to by e.g. typing ", AB08"
+#
+@@@@@@
+j LSGT
+z AB01
+x AB02
+c AB03
+v AB04
+, AB08
+. AB09
+' AC11
+ä AD09
+å AD10
+ö AD11
+@@@@@@
+#
+#
+#
+#
+#
+#
+####################### 5: Loss function parameters #######################
+#
+# Choose the parameters for the loss function.
+#
+#
+#
+@@@@ Outward roll punish
+@@@@ For every outward roll detected in a bigram, the frequency that will be 
+@@@@ added to the loss, is first multiplied by this value.
+4.0
+@@@@ Same finger punish
+@@@@ Bigrams written with the same finger are punished. Punish is more severe 
+@@@@ if the letters are on different rows.
+4.0
+@@@@ Big y jump punish
+@@@@ If a bigram is written with two adjacent fingers on the same hand, and 
+@@@@ the two letters are separated by a whole row, punish.
+2.0
+@@@@ Hill shape punish
+@@@@ If the inner letter of a bigram is higher up than the outer one (e.g.
+@@@@ "ul" on qwerty), punish.
+2.0
+@@@@
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
