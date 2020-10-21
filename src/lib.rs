@@ -3,7 +3,6 @@ mod parameters;
 extern crate rand;
 extern crate serde;
 extern crate serde_yaml;
-extern crate wasm_bindgen;
 use std::time::Instant;
 use std::process::Command;
 use std::convert::TryInto;
@@ -17,13 +16,11 @@ use std::sync::mpsc::Sender;
 use std::{fs, thread};
 use rand::Rng;
 use parameters::Parameters;
-use wasm_bindgen::prelude::*;
 
 static NR_THREADS: u8 = 4;
 static MIN_SQRD_KEY_SEP: f32 = 1.6;
 
 
-#[wasm_bindgen]
 pub fn start() {
 
     println!("Starting optimisation. {} threads active.\n", NR_THREADS);
@@ -331,10 +328,7 @@ fn save_layout(key_map_string: &String, par_struct: &Parameters) {
                             par_struct.loss_params["same_fing_punish"],
                             par_struct.loss_params["big_y_jump_punish"],
                             par_struct.loss_params["hill_shape_punish"]);
-    //for c in par_struct.locked_letters.keys() {
-        //if *c == '.' { file_name.push('p'); }
-        //else { file_name.push(*c); }
-    //}
+    fs::create_dir_all("results/layouts");
     fs::write(&file_name, key_map_string)
         .expect("Unable to write end layout result to file");
 
