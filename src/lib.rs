@@ -3,7 +3,7 @@ mod parameters;
 extern crate rand;
 extern crate serde;
 extern crate serde_yaml;
-use std::time::Instant;
+// use std::time::Instant;
 use std::process::Command;
 use std::convert::TryInto;
 use std::collections::HashMap;
@@ -20,11 +20,14 @@ use parameters::Parameters;
 static NR_THREADS: u8 = 4;
 static MIN_SQRD_KEY_SEP: f32 = 1.6;
 
+pub fn debug_function() -> u8 {
+    return 1;
+}
 
 pub fn start() {
 
     println!("Starting optimisation. {} threads active.\n", NR_THREADS);
-    let start_time = Instant::now();
+    // let start_time = Instant::now();
     // test_write();
     let par_struct = get_params();
     let data = get_lang_data();
@@ -46,7 +49,7 @@ pub fn start() {
         secretary.report(loss, key_map_string);
     }
     secretary.save_results(&par_struct);
-    secretary.print_done(start_time);
+    // secretary.print_done(start_time);
 }
 
 /*
@@ -280,6 +283,7 @@ impl Secretary {
         save_loss_stats(&self.loss_stat);
     }
 
+    /*
     fn print_done(&self, start_time: Instant) {
         let mut secs: f64 = start_time.elapsed().as_secs() as f64;
         let mut mins = round::floor(secs/60.0, 0);
@@ -299,6 +303,7 @@ impl Secretary {
             println!("Optimization done! Time elapsed: {}min {}s.", mins, secs);
         } else { println!("Optimization done! Time elapsed: {}s.", secs); }
     }
+    */
 }
 
 fn init_secretary(par_struct: &Parameters) -> Secretary {
