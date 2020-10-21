@@ -49,6 +49,7 @@ pub fn start() {
     secretary.print_done(start_time);
 }
 
+/*
 fn test_write() {
     let mut param = Parameters {
         nr_min_loss_target: 10,
@@ -65,6 +66,7 @@ fn test_write() {
     let mut file = File::create("foo.yaml").unwrap();
     file.write_all(s.as_bytes());
 }
+*/
 
 fn start_worker(tx: Sender<(f32, String)>, par_struct: Parameters, data: Data) {
     let key_vector = get_key_vector(&par_struct);
@@ -328,7 +330,7 @@ fn save_layout(key_map_string: &String, par_struct: &Parameters) {
                             par_struct.loss_params["same_fing_punish"],
                             par_struct.loss_params["big_y_jump_punish"],
                             par_struct.loss_params["hill_shape_punish"]);
-    fs::create_dir_all("results/layouts");
+    fs::create_dir_all("results/layouts").expect("Could not create paths");
     fs::write(&file_name, key_map_string)
         .expect("Unable to write end layout result to file");
 
