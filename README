@@ -1,0 +1,2 @@
+# Keyboard optimiser
+Run with `cargo run`, which assumes that ./results/layouts directory exists.
