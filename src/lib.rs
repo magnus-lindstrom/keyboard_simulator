@@ -3,7 +3,6 @@ mod parameters;
 extern crate rand;
 extern crate serde;
 extern crate serde_yaml;
-extern crate wasm_bindgen;
 use std::time::Instant;
 use std::process::Command;
 use std::convert::TryInto;
@@ -17,13 +16,11 @@ use std::sync::mpsc::Sender;
 use std::{fs, thread};
 use rand::Rng;
 use parameters::Parameters;
-use wasm_bindgen::prelude::*;
 
 static NR_THREADS: u8 = 4;
 static MIN_SQRD_KEY_SEP: f32 = 1.6;
 
 
-#[wasm_bindgen]
 pub fn start() {
 
     println!("Starting optimisation. {} threads active.\n", NR_THREADS);
