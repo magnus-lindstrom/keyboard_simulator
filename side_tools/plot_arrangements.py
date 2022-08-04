@@ -1,9 +1,14 @@
 import matplotlib.pyplot as plt
 from modules import *
+import git
+
+
+repo = git.repo.base.Repo('.', search_parent_directories=True)
+repo_root = repo.working_tree_dir
 
 layout_name = '4422'
-image_dir = '../results/images/'
-x11_dir = '../results/x11/'
+image_dir = f'{repo_root}/results/images/'
+x11_dir = f'{repo_root}/results/'
 base_image = 'blank_layout.png'
 
 coords, shifts = get_blank_keyboard_coords()
@@ -11,7 +16,7 @@ spc_letters = get_altgr_letters()
 nr_row_let = get_number_row_letters()
 unused_keys = get_unused_keys()
 
-with open('../results/layouts/{}'.format(layout_name), 'r') as f:
+with open(f'{repo_root}/results/layouts/{layout_name}', 'r') as f:
     tmp = f.read()
 tmp = tmp.splitlines()
 letter_layout = {}

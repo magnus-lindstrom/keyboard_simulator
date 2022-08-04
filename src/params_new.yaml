@@ -1,4 +1,4 @@
-nr_min_loss_target: 10
+nr_min_loss_target: 100
 keyboard_file: src/qwerty_swe
 letters:
   - a

@@ -1,7 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import git
 
-result_dir = '../results/'
+
+repo = git.repo.base.Repo('.', search_parent_directories=True)
+repo_root = repo.working_tree_dir
+result_dir = f'{repo_root}/results/'
 result_files = ['statistics']
 result_files = [result_dir + file for file in result_files]
 colors = ['b', 'r']
@@ -30,5 +34,4 @@ for i_file, file in enumerate(result_files):
     # ax.plot(losses, counts, '-', color=colors[i_file])
 loss_ticks = np.linspace(min_x, max_x, 10)
 ax.set_xticks(loss_ticks)
-plt.savefig('loss_distribution.png')
 plt.show()

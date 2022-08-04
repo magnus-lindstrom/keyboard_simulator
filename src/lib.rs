@@ -25,7 +25,6 @@ pub fn start() {
 
     println!("Starting optimisation. {} threads active.\n", NR_THREADS);
     let start_time = Instant::now();
-    // test_write();
     let par_struct = get_params();
     let data = get_lang_data();
     let key_vector = get_key_vector(&par_struct);

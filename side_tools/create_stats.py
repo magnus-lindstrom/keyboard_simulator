@@ -2,7 +2,7 @@ from collections import Counter
 from modules import get_counts, freq_from_count, save_freqs
 
 """
-This script gets the word frequency of words in the swedish and english 
+This script gets the word frequency of words in the swedish and english
 languages and prints it to text files. It also saves the most common bigrams
 from each language and the most common letters. Together with frequencies.
 """
@@ -49,13 +49,3 @@ if bigram_freq_sum < .99 or bigram_freq_sum > 1.01:
     print('ERROR! Total bigram frequencies summed to {:.02f}!'.format(bigram_freq_sum))
 if letter_freq_sum < .99 or letter_freq_sum > 1.01:
     print('ERROR! Total letter frequencies summed to {:.02f}!'.format(letter_freq_sum))
-
-
-
-
-
-
-
-
-
-

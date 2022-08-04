@@ -1,6 +1,7 @@
 import string
 import os
 from collections import Counter
+from typing import List, Tuple
 
 
 def get_blank_keyboard_coords():
@@ -225,10 +226,10 @@ def save_x11_file(layout, path, name):
         f.write(file_content)
 
 
-def get_counts(language, data_dir):
+def get_counts(language, data_dir) -> Tuple[Counter, Counter, Counter]:
 
     allowed_letters = list(string.ascii_letters)
-    allowed_letters.extend([' ', 'å', 'ä', 'ö', 'Å', 'Ä', 'Ö', '.', ',', '\''])
+    allowed_letters.extend([' ', 'å', 'ä', 'ö', 'Å', 'Ä', 'Ö', '\''])
 
     repl_dict = {
         'á': 'a',
@@ -241,11 +242,13 @@ def get_counts(language, data_dir):
         'ì': 'i',
         'ò': 'o',
         'ù': 'u',
+        '.': '',
+        ',': '',
         '’': '\''
     }
-    # Get most common words
 
-    complete_word_list = []
+    # Get the most common words
+    complete_word_list: List[str] = []
     for filename in os.listdir(data_dir + '{}_books/'.format(language)):
         with open(data_dir + '{}_books/'.format(language) + filename, 'r') as f:
             text = f.read()
@@ -261,8 +264,8 @@ def get_counts(language, data_dir):
     word_count = Counter(complete_word_list)
 
     # Get the most common letters and bigrams
-    bigram_count = Counter()
-    letter_count = Counter()
+    bigram_count: Counter[str] = Counter()
+    letter_count: Counter[str] = Counter()
     for word, count in word_count.most_common():
         for letter in word:
             letter_count.update({letter: count})
